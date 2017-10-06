@@ -14,23 +14,19 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('firstname');
-          $table->string('lastname');
-          $table->string('username')->unique();
-          $table->integer('phone number');
-          $table->string('home address');
-          $table->string('email')->unique();
-          $table->string('password');
-          $table->rememberToken();
-          $table->enum('admin', ['admin','non-admin']);
-          /*$table->enum('status', ['1','0']);
-          $table->integer('status');*/
-          $table->integer('status')->length(1);
-          $table->string('next of kin');
-          $table->string('phonenumber of kin');
-          $table->timestamps();
 
+            $table->increments('id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('username')->unique();
+            $table->integer('phone_number');
+            $table->string('home_address');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
+            $table->enum('admin', [0,1]);
+            $table->enum('active', [1,0]);
+            $table->timestamps();
 
         });
     }

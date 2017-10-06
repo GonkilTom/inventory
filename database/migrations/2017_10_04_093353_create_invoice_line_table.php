@@ -12,7 +12,8 @@ class CreateInvoiceLineTable extends Migration
         $table->foreign('user_id')->references('id')->on('users');
         $table->integer('invoice_id')->unsigned();
         $table->foreign('invoice_id')->references('id')->on('invoice');
-        $table->integer('unit_price');
+        $table->float('unit_price');
+        $table->integer('quantity');
         $table->timestamps();
       });
     }
