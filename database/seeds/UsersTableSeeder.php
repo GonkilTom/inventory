@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
           'username' => 'tyu' ,
           'phone_number' => '07018253903' ,
           'home_address' => 'No 1 Shola Lasaki Street,off Agoro road, Ogba-Iyo, Sango-Ota' ,
-          'active' => 1,
+          'admin' => 1,
           'email' => 'tyu@yahoo.com',
           'password' => bcrypt('tofu') ,
 

@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth');//->except(['index']);//authenticates other functions except index
     }
 
     /**
@@ -21,8 +21,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+     public function index(){
+       return view('home');
+     }
+    public function index2()
     {
-        return view('home');
+        return view('dashboard.index2');//returns a view of index in the dashboardfolder.
     }
+
 }
