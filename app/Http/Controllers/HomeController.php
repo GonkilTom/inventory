@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -22,12 +24,17 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function index(){
-       return view('home');
+     public function index()
+     {
+        return view('home');
      }
+
     public function index2()
     {
-        return view('dashboard.index2');//returns a view of index in the dashboardfolder.
+
+
+        $users = User::where('admin',1)->get();
+        return view('dashboard.index2', compact('users'));//returns a view of index in the dashboardfolder.
     }
 
 }
