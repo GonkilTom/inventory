@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');//->except(['index']);//authenticates other functions except index
-    }
+   }
 
     /**
      * Show the application dashboard.
@@ -31,10 +31,9 @@ class HomeController extends Controller
 
     public function index2()
     {
-
-
-        $users = User::where('admin',1)->get();
-        return view('dashboard.index2', compact('users'));//returns a view of index in the dashboardfolder.
-    }
+        /**$users = User::where('admin',1)->get();
+        return view('dashboard.index2', compact('users'));//returns a view conaining all users that are admin in the dashboardfolder.*/
+        return view('dashboard.index2');
+   }
 
 }
