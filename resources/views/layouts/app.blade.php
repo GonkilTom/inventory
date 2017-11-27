@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboardstyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/tablestyle.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -29,7 +30,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/dashboard') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
 
@@ -74,7 +75,8 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container">
+          @include('inc.messages')
         @yield('content')
 
     </div>

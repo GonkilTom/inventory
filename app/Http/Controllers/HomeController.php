@@ -29,11 +29,10 @@ class HomeController extends Controller
         return view('home');
      }
 
-    public function index2()
+    public function display()
     {
-        /**$users = User::where('admin',1)->get();
-        return view('dashboard.index2', compact('users'));//returns a view conaining all users that are admin in the dashboardfolder.*/
-        return view('dashboard.index2');
+
+        return view('dashboard.display');
    }
 
 }

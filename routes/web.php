@@ -16,7 +16,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('url', 'function name in home controller')->name('home');
-Route::get('/dashboard', 'HomeController@index2')->name('dashboard');
+Route::get('/dashboard', 'HomeController@display')->name('dashboard');
+Route::resource('users','UsersController');
+Route::get('/userslayout','UsersController@users_layout' )->name('userslayout');
+Route::get('/display','UsersController@display_users')->name('display_users');
+// Route::post('/userslayout','UsersController@userslayout' )->name('userslayoutp');
+Route::resource('tests', 'TestController');

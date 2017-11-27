@@ -29,3 +29,10 @@
 .user_management{
   background-color: #00e6ac;
 }
+
+
+.myformstyle{
+  padding: 2em;
+  background: 1em;
+  border-radius: 4px;
+}
