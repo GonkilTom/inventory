@@ -87,7 +87,8 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
-
+    'strong_password'      => 'The :attribute must contain capital letter, number and digits',
+    'digits_validation'    => 'The :attribute must be a number and less than 16 digits',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

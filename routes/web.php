@@ -23,4 +23,4 @@ Route::resource('users','UsersController');
 Route::get('/userslayout','UsersController@users_layout' )->name('userslayout');
 Route::get('/display','UsersController@display_users')->name('display_users');
 // Route::post('/userslayout','UsersController@userslayout' )->name('userslayoutp');
-Route::resource('tests', 'TestController');
+// Route::resource('tests', 'TestController');
