@@ -26,5 +26,13 @@ class DbService
         ]);
     }
 
+    public function get_user($username)
+    {
+        $user = User::where('username', $username)
+                // ->first(0)
+                ->get()
+                ->toArray(); // for security pupose, checkmating unathourised entry of usernames.
 
+        return $user;
+    }
 }

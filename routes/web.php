@@ -22,5 +22,6 @@ Route::get('/dashboard', 'HomeController@display')->name('dashboard');
 Route::resource('users','UsersController');
 Route::get('/userslayout','UsersController@users_layout' )->name('userslayout');
 Route::get('/display','UsersController@display_users')->name('display_users');
+Route::get('/users/edit/{username}','UsersController@edit_users')->name('edit_user');
 // Route::post('/userslayout','UsersController@userslayout' )->name('userslayoutp');
 // Route::resource('tests', 'TestController');

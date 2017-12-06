@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
   <form class = "form-group" action= "{{ route('users.store') }}" method = "post">
+  {{-- {!! csrt_field() !!}   --}}
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <label for="first_name">FIRST NAME</label>
       <input class="form-control" type="text" name="first_name" value="" placeholder="First Name" required><br>

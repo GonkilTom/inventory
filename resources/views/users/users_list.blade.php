@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="well">
+  <div class="">
     {{-- <table>
       @foreach ($users as $user){
         <tr>
@@ -13,18 +13,21 @@
 
       @endforeach
     </table> --}}
+
     <div class="">
-      <table>
+      <table class = "table table-striped">
           <caption>This is a list of the users</caption>
           <thead>
-            <td>FIRST NAME</td>
-            <td>LAST NAME</td>
-            <td>USERNAME</td>
-            <td>PHONE NUMBER</td>
-            <td>EMAIL</td>
-            <td>ADMIN STATUS</td>
-            <td colspan="2">ACTION</td>
-          </thead>
+            <tr>
+              <td>First Name</td>
+              <td>Last Name</td>
+              <td>Username</td>
+              <td>Phone Number</td>
+              <td>Email</td>
+              <td>Admin Status</td>
+              <td colspan="2">ACTION</td>
+            </tr>
+         </thead>
         @foreach ($users as $user)
           <tr>
             <td>{{$user->first_name}}</td>
@@ -36,11 +39,11 @@
               $admin_status = $user->admin;
             @endphp
               @if ( $admin_status == 1)
-                <td>{{ "Admin" }}</td>
+                <td>{{ "admin" }}</td>
               @else
-                <td>{{"NON-Admin"}}</td>
+                <td>{{"non - admin"}}</td>
               @endif
-              <td><a href="#" class="btn btn-warning">Edit</a></td>
+              <td><a href="/users/edit/{{$user->username}}" class="btn btn-warning">Edit</a></td>
               <td><a href="#" class="btn btn-danger">Delete</a></td>
           </tr>
 
