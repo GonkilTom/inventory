@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
-  <form class = "form-group" action= "{{ route('users.update') }}" method = "post">
+  {{-- @php
+    dd($user)
+  @endphp --}}
+  <form class = "form-group" action= "/users/{{$user[0]['username']}}" method = "post">
+    {{method_field("PATCH")}}
   {{-- {!! csrt_field() !!}   --}}
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <label for="first_name">FIRST NAME</label>

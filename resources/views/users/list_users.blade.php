@@ -25,14 +25,14 @@
               <td>Phone Number</td>
               <td>Email</td>
               <td>Admin Status</td>
-              <td colspan="2">ACTION</td>
+              <td colspan="2">Actions</td>
             </tr>
          </thead>
         @foreach ($users as $user)
           <tr>
-            <td>{{$user->first_name}}</td>
-            <td>{{$user->last_name}}</td>
-            <td>{{$user->username}}</td>
+            <td>{{ ucfirst($user->first_name) }}</td>
+            <td>{{ ucfirst($user->last_name) }}</td>
+            <td>{{ ucfirst($user->username) }}</td>
             <td>{{$user->phone_number}}</td>
             <td>{{$user->email}}</td>
             @php
@@ -48,10 +48,10 @@
           </tr>
 
         @endforeach
-
+        {{$users->links()}}
       </table>
     </div>
   </div>
-  <a href="{{ route('userslayout') }}" class="btn btn-primary">Back</a>
+  <a href="{{ route('users.index') }}" class="btn btn-primary">Back</a>
 
 @endsection

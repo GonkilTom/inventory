@@ -21,7 +21,7 @@
                             <a href="#" class="sold">Sold</a>
                             <a href="#" class="stock_management">Stock Management</a>
                             <a href="#" class="add_stock">Add Stock</a>
-                            <a href="{{route ('userslayout') }}" class="user_management">Manage Users</a>
+                            <a href="{{ route ('users.index') }}" class="user_management">Manage Users</a>
 
                           </div>
 

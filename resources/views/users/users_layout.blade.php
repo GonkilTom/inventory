@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 
@@ -33,4 +33,4 @@
     <h3><a href="{{ route('display_users') }}">View Users</a></h3>
   </div>
 
-@endsection --}}
+@endsection --}} --}}
