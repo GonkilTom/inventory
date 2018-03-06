@@ -19,22 +19,25 @@
           <caption>This is a list of the users</caption>
           <thead>
             <tr>
+              <td>S/N</td>
               <td>First Name</td>
               <td>Last Name</td>
               <td>Username</td>
               <td>Phone Number</td>
               <td>Email</td>
               <td>Admin Status</td>
-              <td colspan="2">Actions</td>
+              <td>Actions</td>
             </tr>
          </thead>
+        @php $no = 1; @endphp
         @foreach ($users as $user)
           <tr>
+            <td>{{ $no++}}</td>
             <td>{{ ucfirst($user->first_name) }}</td>
             <td>{{ ucfirst($user->last_name) }}</td>
             <td>{{ ucfirst($user->username) }}</td>
-            <td>{{$user->phone_number}}</td>
-            <td>{{$user->email}}</td>
+            <td>{{ $user->phone_number }}</td>
+            <td>{{ $user->email }}</td>
             @php
               $admin_status = $user->admin;
             @endphp
@@ -43,8 +46,15 @@
               @else
                 <td>{{"non - admin"}}</td>
               @endif
-              <td><a href="/users/edit/{{$user->username}}" class="btn btn-warning">Edit</a></td>
-              <td><a href="#" class="btn btn-danger">Delete</a></td>
+              <td>
+                <form class = "" action = "{{ route('users.destroy' , $user->id) }}" method="post">
+                  <input type = "hidden" name = "_method" value="delete">
+                  <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
+                  <a href="{{ route('users.edit' , $user->id) }}" class="btn btn-warning">Edit</a>
+                  {{-- <a href="/users/edit/{{$user->username}}" class="btn btn-warning">Edit</a> --}}
+                  <input type="submit" class = "btn btn-danger" onclick = "return confirm('Are you sure you want to delete this user ?')" name = "" value = "Delete">
+                </form>
+             </td>
           </tr>
 
         @endforeach

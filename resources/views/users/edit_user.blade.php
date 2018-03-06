@@ -3,9 +3,51 @@
   {{-- @php
     dd($user)
   @endphp --}}
-  <form class = "form-group" action= "/users/{{$user[0]['username']}}" method = "post">
-    {{method_field("PATCH")}}
+  <form class = "form-group" action= "{{ route('users.update' , $user->id) }}" method = "post">
+    {{-- {{method_field("PATCH")}} --}}
   {{-- {!! csrt_field() !!}   --}}
+  <input type="hidden" name="_method" value="PATCH">
+  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      <label for="first_name">FIRST NAME</label>
+      <input class="form-control" type="text" name="first_name" value="{{ $user->first_name }}" placeholder="First Name" required><br>
+      <label for="last_name">LAST NAME</label>
+      <input class="form-control" type="text" name="last_name" value="{{ $user->last_name }}" placeholder="Last Name" required><br>
+      <label for="username">USERNAME</label>
+      <input class="form-control" type="text" name="username" value="{{ $user->username }}" placeholder="Username" required><br>
+      <label for="phone_number">TELEPHONE NUMBER</label>
+      <input class="form-control" type="tel" name="phone_number" value="{{ $user->phone_number }}" placeholder="Tel. Phone number"><br>
+      <label for="home_address">HOME ADDRESS</label>
+      <input class="form-control" type="text" name="home_address" value="{{ $user->home_address }}" placeholder="Home Address" required><br>
+      <label for="email">EMAIL</label>
+      <input class="form-control" type="email" name="email" value="{{ $user->email }}" placeholder="E-mail Address" required><br>
+      <label for="password">PASSWORD</label>
+      <input class="form-control" type="password" name="password" value="" placeholder="Password" disabled><br>
+      <label for="admin" >NON-ADMIN    </label>
+      <input type="radio" name= "admin" id = 0 value = 0 disabled><br>
+      <label for="admin">ADMIN</label>
+      <input type="radio" name= "admin" id = 1 value = 1 disabled><br>
+      <br><br>
+      <input type="submit" value= "Update" class= "btn btn-primary">
+  </form>
+@endsection
+
+
+
+
+
+
+
+
+
+{{-- @extends('layouts.app')
+@section('content')
+  {{-- @php
+    dd($user)
+  @endphp --}}
+  {{-- <form class = "form-group" action= "/users/{{ $user[0]['username'] }}" method = "post">
+    {{-- {{method_field("PATCH")}} --}}
+  {{-- {!! csrt_field() !!}   --}}
+  {{-- <input type="hidden" name="_method" value="PATCH">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <label for="first_name">FIRST NAME</label>
       <input class="form-control" type="text" name="first_name" value="{{ $user[0]['first_name'] }}" placeholder="First Name" required><br>
@@ -27,5 +69,5 @@
       <input type="radio" name= "admin" id = 1 value = 1 disabled><br>
       <br><br>
       <input type="submit" value= "Save" class= "btn btn-primary">
-  </form>
-@endsection
+  </form> --}}
+ion --}} --}}

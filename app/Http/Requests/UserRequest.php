@@ -27,10 +27,12 @@ class UserRequest extends FormRequest
             'first_name' => 'required',
             'last_name' => 'required',
             'username' => 'required|unique:users,username',
-            'phone_number' => 'required|unique:users,phone_number|digits_validation',
+            // 'phone_number' => 'required|unique:users,phone_number|digits_validation',
+            'phone_number' => 'required|unique:users,phone_number',
             'home_address' => 'required',
             'email' => 'required|unique:users,email',
-            'password' => 'required|strong_password',
+            'password' => 'required',
+            // 'password' => 'required|strong_password',
         ];
     }
 }

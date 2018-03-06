@@ -8,8 +8,7 @@ class CreateInvoiceTable extends Migration
     {
         Schema::create('invoice', function(Blueprint $table){
           $table->increments('id');
-          $table->float('total');
-          $table->enum('payment_status',['PAID','PENDING']);
+          
           $table->timestamps();
         });
     }
