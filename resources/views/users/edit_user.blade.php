@@ -23,9 +23,9 @@
       <label for="password">PASSWORD</label>
       <input class="form-control" type="password" name="password" value="" placeholder="Password" disabled><br>
       <label for="admin" >NON-ADMIN    </label>
-      <input type="radio" name= "admin" id = 0 value = 0 disabled><br>
+      <input type="radio" name= "admin" id=0 value=0 disabled><br>
       <label for="admin">ADMIN</label>
-      <input type="radio" name= "admin" id = 1 value = 1 disabled><br>
+      <input type="radio" name= "admin" id=1 value=1 disabled><br>
       <br><br>
       <input type="submit" value= "Update" class= "btn btn-primary">
   </form>

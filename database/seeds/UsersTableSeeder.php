@@ -13,14 +13,14 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         App\User::create([
-          'first_name' => 'tofunmi' ,
-          'last_name' => 'yusuf' ,
-          'username' => 'tyu' ,
-          'phone_number' => '07018253903' ,
-          'home_address' => 'No 1 Shola Lasaki Street,off Agoro road, Ogba-Iyo, Sango-Ota' ,
+          'first_name' => 'toluwa' ,
+          'last_name' => 'fushbau' ,
+          'username' => 'boluwa' ,
+          'phone_number' => '07018258703' ,
+          'home_address' => 'ibadan' ,
           'admin' => 1,
-          'email' => 'tyu@yahoo.com',
-          'password' => bcrypt('tofu') ,
+          'email' => 'boluwa@tmail.com',
+          'password' => bcrypt('password') ,
 
         ]);
     }

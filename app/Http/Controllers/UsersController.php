@@ -24,19 +24,22 @@ class UsersController extends Controller
     public function store(UserRequest $request)
     {
         // $this->db->create_user($request->all()); //saves user
-        $this->validate($request,[
-          'email' => 'required',
-          'username' => 'required',
-          'password' => 'required',
-          'last_name' => 'required',
-          'first_name' => 'required',
-          'phone_number' => 'required'
-        ]);
+
+        //this validation has been done in the userRequest file
+
+        // $this->validate($request,[
+        //   'email' => 'required',
+        //   'username' => 'required',
+        //   'password' => 'required',
+        //   'last_name' => 'required',
+        //   'first_name' => 'required',
+        //   'phone_number' => 'required'
+        // ]);
 
           $user = new User;
           $user->email = $request->input('email');
           $user->username = $request->input('username');
-          $user->password = $request->input('password');
+          $user->password = bcrypt($request->input('password'));
           $user->last_name = $request->input('last_name');
           $user->first_name = $request->input('first_name');
           $user->phone_number = $request->input('phone_number');

@@ -9,9 +9,9 @@ class CreateInvoiceLineTable extends Migration
       Schema::create('invoice_line',function(Blueprint $table){
         $table->increments('id');
         $table->integer('user_id')->unsigned();
-        $table->foreign('user_id')->references('id')->on('users');
+        // $table->foreign('user_id')->references('id')->on('users');
         $table->integer('invoice_id')->unsigned();
-        $table->foreign('invoice_id')->references('id')->on('invoice');
+        // $table->foreign('invoice_id')->references('id')->on('invoice');
         $table->float('unit_price');
         $table->integer('quantity');
         $table->timestamps();

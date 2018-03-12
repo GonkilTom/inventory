@@ -14,8 +14,8 @@
       @endforeach
     </table> --}}
 
-    <div class="">
-      <table class = "table table-striped">
+    <div class="row">
+      <table class = "table table-striped table-hover">
           <caption>This is a list of the users</caption>
           <thead>
             <tr>
@@ -32,7 +32,7 @@
         @php $no = 1; @endphp
         @foreach ($users as $user)
           <tr>
-            <td>{{ $no++}}</td>
+            <td>{{ $no++ }}</td>
             <td>{{ ucfirst($user->first_name) }}</td>
             <td>{{ ucfirst($user->last_name) }}</td>
             <td>{{ ucfirst($user->username) }}</td>
