@@ -71,7 +71,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return view('categories.index', compact('categories'));
+        return redirect('/categories/create')->with('success' , 'Category Deleted');
     }
 
     public function display()

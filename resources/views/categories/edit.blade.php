@@ -12,7 +12,7 @@
                       <input type="hidden" name="_method" value="PATCH">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input type="text" class="form-control" name="category_name" value="{{ $category->category_name}}" required><br>
-                      <input type="submit" value= "Update" class= "btn btn-secondary">
+                      <input type="submit" value= "Save" class= "btn btn-secondary">
                     </div>
                   </form>
               </div>

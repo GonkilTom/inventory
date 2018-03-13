@@ -22,7 +22,8 @@ Route::get('/dashboard', 'HomeController@display')->name('dashboard');
 // Route::resource('users','UsersController');
 Route::resources([
     'users' => 'UsersController',
-    'categories' => 'CategoryController'
+    'categories' => 'CategoryController',
+    'items' => 'ItemController'
 ]);
 // Route::get('/userslayout','UsersController@users_layout' )->name('userslayout');
 Route::get('/display_users','UsersController@display_users')->name('users.display');
