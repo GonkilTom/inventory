@@ -9,13 +9,11 @@
                 <div class="panel-heading">Items Control</div>
 
                 <div class="panel-body">
-
-                    <div class="panel-body">
-                        <h4><a href="{{ route('items.create') }}">Create Items</a></h4>
-                        <hr>
-                        <h4><a href="#">View Items</a></h4>
-                    </div>
+                  <h4><a href="{{ route('items.create') }}">Create Items</a></h4>
+                  <hr>
+                  <h4><a href="#">View Items</a></h4>
                 </div>
+                
             </div>
         </div>
     </div>

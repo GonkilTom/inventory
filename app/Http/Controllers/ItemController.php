@@ -1,8 +1,13 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Category;
 use App\Item;
 use Illuminate\Http\Request;
-namespace App\Http\Controllers;
+use App\Http\Requests\ItemRequest;
+use Illuminate\Support\Facades\Redirect;
+
 
 class ItemController extends Controller
 {
@@ -34,9 +39,17 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ItemRequest $request)
     {
-        //
+        $item = new Item;
+        // dd($request->all());
+        $item->item_name = $request->input('item_name');
+        $item->category_id = $request->input('category_id');
+        $item->unit_price = $request->input('unit_price');
+        $item->quantity = $request->input('quantity');
+        $item->save();
+
+        return redirect::route('items.index')->with('success' , 'Item Created');
     }
 
     /**
@@ -45,10 +58,13 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $items = Item::paginate(10);
+        $categories = Category::all();
+        return view('items.show', compact('items','categories'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

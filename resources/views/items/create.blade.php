@@ -12,7 +12,7 @@
                             {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('') ? ' has-error' : '' }}">
-                                <label for="item_name" >Item Name</label>
+                                <label for="item_name">Item Name</label>
                                 <input id="item_name" type="text" class="form-control" name="item_name" value="{{ old('item_name') }}" placeholder="What's the name of the item ?" required autofocus>
 
                                 @if ($errors->has('item_name'))
@@ -28,7 +28,7 @@
                                     <select class="form-control" id="category_id" name="category_id">
 
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
+                                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
 
                                       @endforeach
                                     </select>
@@ -53,7 +53,7 @@
 
                                 <div class="form-group{{ $errors->has('') ? ' has-error' : '' }}">
                                         <label for="unit_price">Unit Price($)</label>
-                                        <input id="unit_price" type="number" class="form-control" name="unit_price" value="{{ old('unit_price') }}" placeholder="Enter The Price" required>
+                                        <input id="unit_price" type="text" class="form-control" name="unit_price" value="{{ old('unit_price') }}" placeholder="Enter The Price" required>
 
                                             @if ($errors->has('unit_price'))
                                                 <span class="help-block">

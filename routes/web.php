@@ -20,10 +20,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('url', 'function name in home controller')->name('home');
 Route::get('/dashboard', 'HomeController@display')->name('dashboard');
 // Route::resource('users','UsersController');
+Route::get('items/show','ItemController@show')->name('items.show');
+Route::resource('items','ItemController',['except' => 'show']);
+            // old url             new url
+// Route::get('photo/build', ['as' => 'photo.create', 'uses' => 'PhotoController@create']);
 Route::resources([
     'users' => 'UsersController',
-    'categories' => 'CategoryController',
-    'items' => 'ItemController'
+    'categories' => 'CategoryController'
+
 ]);
 // Route::get('/userslayout','UsersController@users_layout' )->name('userslayout');
 Route::get('/display_users','UsersController@display_users')->name('users.display');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
@@ -19,7 +20,8 @@ class CategoryController extends Controller
     public function create()
     {
         $categories = Category::paginate(10);
-        return view('categories.index', compact('categories'));
+        $items = Item::all();
+        return view('categories.index', compact('categories','items'));
     }
 
 

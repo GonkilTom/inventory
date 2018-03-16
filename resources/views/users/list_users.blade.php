@@ -58,8 +58,9 @@
           </tr>
 
         @endforeach
-        {{$users->links()}}
+
       </table>
+      {{ $users->links() }}
     </div>
   </div>
   <a href="{{ route('users.index') }}" class="btn btn-primary">Back</a>
