@@ -4,25 +4,27 @@
     <div class="container">
         <div class="col-md-10 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading ">Update Quantities and Prices</div>
+                <div class="panel-heading">Available Items and current prices</div>
 
                 <div class="panel-body">
                     <table class="table table-striped table-hover">
 
-                        <thead>
-                            <td>S/N</td>
-                            <td>Item Name</td>
-                            <td>Category Name</td>
-                            <td></td>
+                        <thead class=" thead-dark">
+                            <td>#</td>
+                            <td>Item</td>
+                            <td>Category</td>
+                            <td>Quantity</td>
+                            <td>Price per Unit($)</td>
                         </thead>
 
                         @php $no = 1; @endphp
-                        @foreach ($items as $item )
+                        @foreach ($items as $item)
                           <tr>
                               <td>{{ $no++ }}</td>
                               <td>{{ $item->item_name }}</td>
                               <td>{{ $item->category->category_name }}</td>
-                              <td><a href="{{ route('stockmgt.edit', $item->id) }} " class="btn btn-primary">Add More</a></td>
+                              <td>{{ $item->quantity }}</td>
+                              <td>{{ $item->unit_price }}</td>
                           </tr>
                         @endforeach
 

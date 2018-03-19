@@ -17,9 +17,9 @@
 
                           <div class="wrapper">
                             <a href="#" class="sell">Sell</a>
-                            <a href="#" class="display_stock">Display Stock</a>
+                            <a href="{{ Route('fulllist.display') }}" class="display_stock">Display Stock</a>
                             <a href="#" class="sold">Sold</a>
-                            <a href="#" class="stock_management">Stock Management</a>
+                            <a href="{{ Route('stockmgt') }}" class="stock_management">Stock Management</a>
                             <a href="{{ route('categories.index')  }}" class="add_to_stock">Add To Stock</a>
                             <a href="{{ route ('users.index') }}" class="user_management">Manage Users</a>
 

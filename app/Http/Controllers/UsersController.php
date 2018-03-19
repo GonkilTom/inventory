@@ -37,11 +37,12 @@ class UsersController extends Controller
         // ]);
 
           $user = new User;
-          $user->email = $request->input('email');
-          $user->username = $request->input('username');
-          $user->password = bcrypt($request->input('password'));
-          $user->last_name = $request->input('last_name');
-          $user->first_name = $request->input('first_name');
+          
+          $user->email        = $request->input('email');
+          $user->username     = $request->input('username');
+          $user->password     = bcrypt($request->input('password'));
+          $user->last_name    = $request->input('last_name');
+          $user->first_name   = $request->input('first_name');
           $user->phone_number = $request->input('phone_number');
           $user->home_address = $request->input('home_address');
           $user->save();
@@ -60,6 +61,7 @@ class UsersController extends Controller
         // return view::make('users.edit_user')->with('username', $id);
          return view('users.edit_user' , compact('user'));
      }
+
      public function update(Request $request, $id)
      {
         $this->validate($request, [
@@ -71,10 +73,10 @@ class UsersController extends Controller
         ]);
 
         $user = User::findOrFail($id);
-        $user->email = $request->email;
-        $user->username = $request->username;
-        $user->last_name = $request->last_name;
-        $user->first_name = $request->first_name;
+        $user->email        = $request->email;
+        $user->username     = $request->username;
+        $user->last_name    = $request->last_name;
+        $user->first_name   = $request->first_name;
         $user->home_address = $request->home_address;
         $user->phone_number = $request->phone_number;
         // $user->email = Request::input('email');

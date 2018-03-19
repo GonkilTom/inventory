@@ -11,9 +11,9 @@
                 <div class="panel-body">
                   <h4><a href="{{ route('items.create') }}">Create Items</a></h4>
                   <hr>
-                  <h4><a href="#">View Items</a></h4>
+                  <h4><a href="{{ route('items.show') }}">View Items</a></h4>
                 </div>
-                
+
             </div>
         </div>
     </div>
