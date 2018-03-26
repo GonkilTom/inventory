@@ -35,8 +35,11 @@ Route::get('/display_users','UsersController@display_users')->name('users.displa
 // Route::post('/userslayout','UsersController@userslayout' )->name('userslayoutp');
 // Route::resource('tests', 'TestController');
 Route::get('/display_categories','CategoryController@display')->name('categories.display');
+
 Route::get('/stockmgt','MultipleController@index')->name('stockmgt');
 Route::get('/stockmgt/{item}/edit','MultipleController@stockmgt_edit')->name('stockmgt.edit');
 Route::put('/stockmgt/{item}','MultipleController@stockmgt_update')->name('stockmgt.update');
 Route::patch('/stockmgt/{item}','MultipleController@stockmgt_update')->name('stockmgt.update');
 Route::get('/fulllist', 'MultipleController@full_stock_display')->name('fulllist.display');
+
+Route::get('/sale','SalesController@index')->name('sales.index');

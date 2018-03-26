@@ -14,7 +14,7 @@
                             <td>Item</td>
                             <td>Category</td>
                             <td>Quantity</td>
-                            <td>Price per Unit($)</td>
+                            <td>Unit Price($)</td>
                         </thead>
 
                         @php $no = 1; @endphp

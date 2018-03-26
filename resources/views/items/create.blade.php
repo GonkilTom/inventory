@@ -29,9 +29,9 @@
 
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->category_name }}</option>
-
-                                      @endforeach
+                                        @endforeach
                                     </select>
+
                                         @if ($errors->has('category_name'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('category_name') }}</strong>

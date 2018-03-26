@@ -89,6 +89,7 @@ return [
     'url'                  => 'The :attribute format is invalid.',
     'strong_password'      => 'The :attribute must contain capital letter, number and digits',
     'digits_validation'    => 'The :attribute must be a number and less than 16 digits',
+    'two_dp_validation'    => 'The :attribute must be a floating number to the second decimal place at most.',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

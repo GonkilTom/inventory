@@ -24,8 +24,9 @@ class ItemRequest extends FormRequest
     public function rules()
     {
         return [
-          'quantity' => 'required',
-          'unit_price' => 'required',
+          'quantity' => 'required|numeric',
+          'unit_price' => 'required|two_dp_validation',
+          // 'unit_price' => 'required|numeric|between:0.00,99.99',
           'item_name' => 'required|unique:items',
           // 'category_id' => 'required'
         ];

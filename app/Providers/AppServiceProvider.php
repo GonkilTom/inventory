@@ -18,34 +18,43 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         Validator::extend('strong_password', function($attribute, $value, $parameters)
-          {
-          //capital and num
-          if (preg_match('/[A-Z0-9]/', $value) == false)
-          {
-              return false;
-          }
-          //special char
-          if (preg_match('/[^\da-zA-Z]/', $value) == false)
-          {
-              return false;
-          }
-          return true;
-          });
+        {
+            //capital and num
+            if (preg_match('/[A-Z0-9]/', $value) == false)
+            {
+                return false;
+            }
+            //special char
+            if (preg_match('/[^\da-zA-Z]/', $value) == false)
+            {
+                return false;
+            }
+            return true;
+        });
 
         Validator::extend('digits_validation', function($attribute,$value,$parameters)
         {
-          //only digits(temporary tho(final product is going to be in the +234 format))
-          if (preg_match('/\+?^[\d+]$ /', $value) == false)
-          {
-            return false;
-          }
-          //length of input
-          if(preg_match('/[\d{15}]/', $value) == false)
-          {
-            return false;
-          }
-          return true;
+              //only digits(temporary tho(final product is going to be in the +234 format))
+              if (preg_match('/^\+?^[\d+]$ /', $value) == false)
+              {
+                return false;
+              }
+              //length of input
+              if(preg_match('/[\d{15}]/', $value) == false)
+              {
+                return false;
+              }
+              return true;
           });
+
+        Validator::extend('two_dp_validation', function($attribute,$value,$parameters)
+        {
+            if(preg_match('/^\d*(\.((\d)|(\d{2})))?$/', $value) == false)
+            {
+              return false;
+            }
+            return true;
+        });
     }
 
     /**

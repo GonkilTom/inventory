@@ -43,10 +43,10 @@ class ItemController extends Controller
     {
         $item = new Item;
         // dd($request->all());
-        $item->item_name = $request->input('item_name');
-        $item->category_id = $request->input('category_id');
-        $item->unit_price = $request->input('unit_price');
         $item->quantity = $request->input('quantity');
+        $item->item_name = $request->input('item_name');
+        $item->unit_price = $request->input('unit_price');
+        $item->category_id = $request->input('category_id');
         $item->save();
 
         return redirect::route('items.index')->with('success' , 'Item Created');
